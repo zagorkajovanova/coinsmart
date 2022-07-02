@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>CoinSmart - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
         .link{
@@ -14,18 +14,19 @@
 </head>
 <body>
 <div class="container">
-<!--    NAVBAR-->
-    <header class="navigation" xmlns:sec="http://www.w3.org/1999/xhtml"
-            xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+        <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" th:href="@{'/home'}" style="font-family: Calibri, sans-serif; font-weight: bold; font-size: 25px" >
                     <span class="text-primary">coinsmart</span>
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" th:href="@{'/home'}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Learn</a>
@@ -50,25 +51,25 @@
                 </div>
             </div>
         </nav>
-    </header>
 
 
+    <!--CONTENT-->
     <div class="container mt-5">
         <p class="display-5 mt-4 text-center" style="font-weight: bold;">New to crypto?</p>
         <p class="text-secondary text-center text-uppercase fw-bold"><a href="#" class="link">start with our guides and explainers</a></p>
         
         <div class="row mt-4">
-            <div class="col">
-                <a href="#"><img src="/img/home_image2.png" style="width: 100%; height: 100%" class="img-fluid"></a>
+            <div class="col-lg">
+                <a href="#"><img src="/img/home_image2.png" class="img-fluid" style="width: 100%; height: auto"></a>
             </div>
-            <div class="col">
-                <a href="#"><img src="/img/home_image3.png" class="img-fluid" style="width: 100%; height: 100%"></a>
+            <div class="col-lg">
+                <a href="#"><img src="/img/home_image3.png" class="img-fluid" style="width: 100%; height: auto"></a>
             </div>
-            <div class="col">
-                <a href="#"><img src="/img/home_image1.png" class="img-fluid" style="width: 100%; height: 100%"></a>
+            <div class="col-lg">
+                <a href="#"><img src="/img/home_image1.png" class="img-fluid" style="width: 100%; height: auto"></a>
             </div>
-            <div class="col">
-                <a href="#"><img src="/img/home_image4.png" class="img-fluid" style="width: 100%; height: 100%"></a>
+            <div class="col-lg">
+                <a href="#"><img src="/img/home_image4.png" class="img-fluid" style="width: 100%; height: auto"></a>
             </div>
         </div>
 
@@ -89,7 +90,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="text-center text-lg-start bg-light text-muted">
         <!-- Section: Links  -->
         <section class="pt-2">
