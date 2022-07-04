@@ -1,0 +1,120 @@
+<div class="container mt-5" xmlns="http://www.w3.org/1999/html">
+    <p class="display-5" style="font-weight: bold;">What is Blockchain?</p>
+
+    <div class="row" id="intro">
+        <div class="col-lg-7">
+            <img src="/img/blockchain.png" class="img-fluid">
+        </div>
+        <div class="col">
+            <div style="background-color: #f8f9fa; padding: 20px; position: sticky; top: 0;">
+                <p class="fw-bold">What you'll learn?</p>
+                <p>
+                    1. What is a blockchain?</br>
+                    2. The unique characteristics of a blockchain</br>
+                    3. A simple explanation of how Blockchain works</br>
+                    4. What's the future of blockchains?<br/>
+                </p>
+                <button class="btn btn-outline-info" onclick="getContent()">Start learning</button>
+                <a th:href="@{'/learn/what-is-ethereum'}" class="btn btn-outline-warning">Next course</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p style="font-size: 20px; text-align: justify">
+                    Cryptocurrencies like Bitcoin and Ethereum are powered by a technology called the blockchain. At its most basic, a blockchain is a list of transactions that anyone can view and verify. The Bitcoin blockchain, for example, contains a record of <b>every time someone sent or received bitcoin.</b><br/>
+                    A blockchain is a new way to store data. Rather than centralising information, and the control over it, in one place (a database), blockchains store it across a network where no one point has the authority to change records, This is called <b>decentralisation.</b>
+                </p>
+                <ul style="font-size: 20px;">
+                    <li><b>Satoshi Nakamoto</b> conceptualised the idea of a blockchain in a 2008 Whitepaper (blueprint). The ability to create a decentralised ledger of transactions was fundamental to the viability of Bitcoin - a new peer-to-peer digital cash - and solving the double-spend problem. </li>
+                    <li>Almost <b>all cryptocurrencies</b>, including Bitcoin, Ethereum, Bitcoin Cash, and Litecoin, are secured via blockchain networks. Which means their accuracy is constantly being verified by a huge amount of computing power.</li>
+                    <li>Blockchain technology is also exciting because it has many uses beyond cryptocurrency. Blockchains are being used to explore <b>medical research, improve the accuracy of healthcare records, streamline supply chains, and so much more.</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content1" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">The unique characteristics of a blockchain</p>
+                <p style="font-size: 20px; text-align: justify">
+                    Each block in a blockchain contains <b>three things:</b>
+                </p>
+                <ol style="font-size: 20px;">
+                    <li>Data to be recorded that is represented by what’s called a cryptographic hash.</li>
+                    <li>A coded representation (or cryptographic hash) of the previous block's data.</li>
+                    <li>A timestamp of when the block was added to the chain.</li>
+                </ol>
+                <p style="font-size: 20px; text-align: justify">
+                    <b>Data</b> - The data recorded on a blockchain can vary depending on what is using the technology. For example, as a currency, Bitcoin uses a blockchain to record it's transaction data - which is why its referred to as a ledger.<br/>
+                    Other uses include supply chain data management, healthcare data and identity records; the sky's the limit, so long as the information can be digitised. The point is that blockchains can securely store many different types of data.
+                </p>
+                <p style="font-size: 20px; text-align: justify">
+                    <b>Cryptographic Hashes</b> - A cryptographic hash is essentially a coded (jumbled) representation of a piece of information. It uses a mathematical function (a jumbler) to generate this representation (jumble) linking the meaningful information to the hash. Thus, if I were to change the information, the corresponding hash would change, as the two things are inextricably linked by the hash (jumbling) function.
+                </p>
+                <p style="font-size: 20px; text-align: justify">
+                    <b>Timestamps</b> -  this one is pretty self-explanatory,. A record of the time that an individual block of data was added to the chain. Though simple, Time stamping is crucial, giving blockchains verifiable and unchangeable historical reference points.
+                </p>
+            </div>
+        </div>
+        <div class="col" style="background-color: #f8f9fa; padding: 20px; height: 150px; margin-top: 90px">
+            <div class="mt-3 fw-bold">
+                <b>Hashing</b> is how websites can store your passwords, confirm they are <b>valid</b> when you input them, but not be able to know what they are.
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content2" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">How does a blockchain work?</p>
+                <p style="font-size: 20px; text-align: justify">
+                    Picture a chain you might use for a ship’s anchor. But in this case, every link on the chain is a <b>chunk of information that contains transaction data.</b> At the top of the chain you see what happened today, and as you move down the chain you see older and older transactions. And if you follow it all the way down to the anchor sitting at the bottom of the harbor? You’ll have seen every single transaction in the history of that cryptocurrency. Which gives the blockchain powerful security advantages: it’s an open, transparent record of a cryptocurrency’s entire history.<br/>
+                    If anyone tries to manipulate a transaction it will cause the link to break, and the entire network will see what happened.
+                </p>
+                <ul style="font-size: 20px;">
+                    <li class="fw-bold">How do you send and receive money over a blockchain?</li>
+                    <p>The cryptocurrency network assigns each user a unique ‘address,’ which is made up of a private key and a public key. Anyone can send you money via your public key, which is akin to an email address. When you want to spend your money, you use your private key, which is basically your password, to digitally ‘sign’ transactions. The easiest way to manage your cryptocurrency is via software called a wallet.</p>
+                </ul>
+            </div>
+        </div>
+        <div class="col" style="background-color: #f8f9fa; padding: 20px; height: 150px; margin-top: 90px">
+            <div class="mt-3 fw-bold">
+                The network is constantly checking and securing the accuracy of the blockchain.
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content3" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">What's the future of blockchains?</p>
+                <p style="font-size: 20px; text-align: justify">
+                    The blockchain idea has turned out to be a platform that a huge range of applications can be built on top of. It’s still a new and rapidly developing technology, but many experts have described blockchain’s potential to change the way we live and work as being similar to the potential public internet protocols like HTML had in the early days of the World Wide Web.
+                </p>
+                <ul style="font-size: 20px;">
+                    <li>The Bitcoin Cash and Litecoin blockchains work in a very similar way to the original Bitcoin blockchain. The Ethereum blockchain is a further evolution of the distributed ledger idea, because unlike the Bitcoin blockchain it’s not solely designed to manage a digital money. Think of the Ethereum blockchain more like a powerful and highly flexible computing platform that allows coders to easily build all kinds of applications leveraging the blockchain.</li>
+                    <li><b>For example</b>, imagine a charity that wants to send money to a thousand people every day for a year. With Ethereum, that would only take a few lines of code. Or maybe you’re a video game developer that wants to create items like swords and armor that can be traded outside of the game itself? Ethereum is designed to do that, too.</li>
+                </ul>
+                <form action="/learn/finished" method="post">
+                    <input type="text" name="course" value="What is Blockchain?" hidden>
+                    <button class="btn btn-outline-success col-12">Mark course as done</button>
+                </form>
+                <a th:href="@{'/learn/what-is-cryptocurrency'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function getContent(){
+        document.getElementById("content").hidden = false;
+        document.getElementById("content1").hidden = false;
+        document.getElementById("content2").hidden = false;
+        document.getElementById("content3").hidden = false;
+    }
+</script>

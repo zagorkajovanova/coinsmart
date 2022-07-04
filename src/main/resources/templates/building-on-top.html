@@ -1,0 +1,109 @@
+<div class="container mt-5" xmlns="http://www.w3.org/1999/html">
+    <p class="display-5" style="font-weight: bold;">Building on top of Bitcoin</p>
+
+    <div class="row" id="intro">
+        <div class="col-lg-7">
+            <img src="/img/ligthning-network.png" class="img-fluid">
+        </div>
+        <div class="col">
+            <div style="background-color: #f8f9fa; padding: 20px; position: sticky; top: 0;">
+                <p class="fw-bold">What you'll learn?</p>
+                <p>
+                    1. Revisiting the Blockchain Trilemma</br>
+                    2. Understanding the crypto ecosystem in terms of layers</br>
+                    3. What problem the Lightning Network solves</br>
+                    4. The future of the Lightning Network
+                </p>
+                <button class="btn btn-outline-info" onclick="getContent()">Start learning</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p style="font-size: 20px; text-align: justify">
+                    For Bitcoin to become a widely used form of money -  used for everyday purchases - it also needs to be as fast and convenient as the contactless options we are used to. Unfortunately, Bitcoin out of the box cannot do this, because of something called the <b>Bitcoin trilemma,</b> which has been already introduced.<br/><br/>
+                    The trilemma highlights the difficulty of accommodating the three ideal aspects of a blockchain-based money system:
+                </p>
+                <ol style="font-size: 20px;">
+                    <li class="fw-bold">Security</li>
+                    <li class="fw-bold">Scalability</li>
+                    <li class="fw-bold">Decentralisation</li>
+                </ol>
+                <p style="font-size: 20px; text-align: justify">Bitcoin can provide security and decentralisation but at the cost of scalability. The bitcoin blockchain can currently only process around five transactions per second, when Visa processes thousands of transactions per second.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content1" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">Separating the Layers</p>
+                <p style="font-size: 20px; text-align: justify">
+                    The idea of <b>Layer 2</b> is to build protocols or secondary infrastructure (e.g. the <b>Lightning Network</b>) that can interact with a fundamental base blockchain (Layer 1 e.g Bitcoin) but not be restricted by its scale limitations. This is where we make a clear distinction between on-chain (Layer 1) and off-chain (Layer 2).<br/><br/>
+                    Transactions described as being on-chain are processed entirely through the relevant blockchain's consensus mechanism and recorded publicly onto the chain.<br/><br/>
+                    Bitcoin requires Proof of Work, which takes roughly <b>10 minutes to confirm a transaction,</b> with six recommended for finality, so you can see why on-chain transactions cannot compete with the speed of Visa.<br/>
+                    Transactions described as being off-chain are processed outside of the given blockchain network and its consensus mechanism, but at a later date are batched together and the aggregate activity is recorded as an on-chain transaction.<br/><br/>
+                    The beauty of layer 2 solutions is that the main chain doesn't need to go through any structural change, or sacrifice either security or decentralisation in order to increase scalability.
+                    For Bitcoin, the relevant Layer 2 application that can do this is called the <b>Lighting Network.</b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content2" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">The Lightning Network: Channels & Invoices</p>
+                <p style="font-size: 20px; text-align: justify">
+                    The Lightning Network is an example of <b>Layer 2 bitcoin service.</b> It is an off-chain approach first formally proposed in a paper by <b>Joseph Poon and Thaddeus Dryja</b> in 2015.<br/><br/>
+                    The technology uses <b>micropayment channels</b> to scale the bitcoin blockchain’s capability by processing transactions more efficiently.<br/>
+                    <b>Micropayment channels</b> are opened between two parties looking to conduct a transaction. This channel is opened off-chain and without the overhead of the consensus mechanism, can process transactions much more efficiently than those that occur on-chain.<br/><br/>
+                    Transactions are added to the chain once both parties have closed the channel, i.e. agreed to the transaction's validity.<br/><br/>
+                    On the Lightning Network, <b>payment channels are opened between two parties through multi-signature addresses.</b> These act as mutual vaults that both parties can deposit funds into; multi-signature means that more than one signature is needed to release funds, a fail-safe ensuring one side cannot walk away with the funds within the channel.<br/><br/>
+                    Transactions between the two parties are recorded by updating this balance sheet to include the new balance between the two parties. These updates come in the form of Invoices.<br/><br/>
+                    Rather than using Bitcoin-style addresses <b>Lightning Invoices</b> are generally generated as <b>QR codes,</b> to ease the user experience, though they can be presented as alphanumeric strings.
+
+                </p>
+            </div>
+        </div>
+        <div class="col" style="background-color: #f8f9fa; padding: 20px; height: 150px; margin-top: 90px">
+            <div class="mt-3 fw-bold">
+                An invoice is a request for payment via the Lightning Network. Just like a traditional Invoice, say from your builder, includes instructions of where to remit the payment for services rendered, a Lightning Invoice is a structured set of instructions.
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content3" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">The Lightning Network - Bitcoin's killer Application?</p>
+                <p style="font-size: 20px; text-align: justify">
+                    By enabling the transaction to occur through payment channels rather than on-chain, the lightning network offers a potential way for bitcoin to address its scalability problem. People have likened this to what fiat currency did for gold, arguing that the lightning network could be bitcoin's 'killer application'.<br/><br/>
+                    The analogy works when you think about it, the use of paper notes was a way of scaling gold, just like the lightning network is a way of scaling bitcoin. The scaling of printed money eventually 'killed' gold as a currency and turned it into a value store. It remains to be seen if the lightning network can do this for Bitcoin.<br/><br/>
+                    Lightning is still handling only a tiny fraction of on-chain transactions. Nodes are growing along with the number of wallets that support Lightning, but there is a long way to go to simplify the User Experience of creating/managing channels and invoices.<br/><br/>
+                    Another, perhaps more significant, problem, is <b>the risk of powerful hubs developing on the network.</b><br/><br/>
+                    <b>Hubs</b> are big pools of capital that could facilitate a large proportion of the transactions in the network. This would risk the network's security, and of course, risk re-introducing centralisation to the system.<br/><br/>
+                    The Lightning Network is a work in progress but should it be successful, may finally provide the solution to <b>Bitcoin's trilemma,</b> enabling it to scale transactions without compromising its core features.
+                </p>
+                <form action="/learn/finished" method="post">
+                    <input type="text" name="course" value="Bitcoin, scarcity & trust in money" hidden>
+                    <button class="btn btn-outline-success col-12">Mark course as done</button>
+                </form>
+                <a th:href="@{'/learn/what-is-bitcoin'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function getContent(){
+        document.getElementById("content").hidden = false;
+        document.getElementById("content1").hidden = false;
+        document.getElementById("content2").hidden = false;
+        document.getElementById("content3").hidden = false;
+
+    }
+</script>

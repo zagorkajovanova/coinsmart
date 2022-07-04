@@ -1,0 +1,107 @@
+<div class="container mt-5" xmlns="http://www.w3.org/1999/html">
+    <p class="display-5" style="font-weight: bold;">What is Ethereum?</p>
+
+    <div class="row" id="intro">
+        <div class="col-lg-7">
+            <img src="/img/etherium.png" class="img-fluid">
+        </div>
+        <div class="col">
+            <div style="background-color: #f8f9fa; padding: 20px; position: sticky; top: 0;">
+                <p class="fw-bold">What you'll learn?</p>
+                <p>
+                    1. The origins of Ethereum</br>
+                    2. How does Ethereum work?</br>
+                    3. Ethereum's limitations</br>
+                    4. Ethereum 2.0<br/>
+                </p>
+                <button class="btn btn-outline-info" onclick="getContent()">Start learning</button>
+                <a th:href="@{'/learn/what-is-bitcoin'}" class="btn btn-outline-warning">Next course</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p style="font-size: 20px; text-align: justify">
+                    <b>Ethereum</b> is a blockchain-based system where anyone can build and securely deploy any digital service without going through a formal, centralised approval process - such as getting an App added to Apple's App Store.
+                    Ethereum is the second-biggest cryptocurrency by market cap after Bitcoin. It is also a decentralized computing platform that can run a wide variety of applications — including the entire universe of DeFi.
+                </p>
+                <ol style="font-size: 20px;">
+                    <li><b>Decentralised</b> - there is no central third party control. </li>
+                    <li><b>Reliably secure</b> - fraud and third party interference are very difficult if not impossible</li>
+                    <li><b>Universally accessible</b> - anyone can build, deploy and use Ethereum applications without the need for permission.</li>
+                </ol>
+                <p style="font-size: 20px; text-align: justify">
+                    Ethereum, which launched in 2015, is the second-biggest cryptocurrency by market cap after Bitcoin. But unlike Bitcoin, it wasn’t created to be digital money. Instead, Ethereum’s founders set out to build a new kind of global, decentralized computing platform that takes the security and openness of blockchains and extends those attributes to a vast range of applications.
+                </p>
+                <iframe width="688" height="387" src="https://www.youtube.com/embed/IsXvoYeJxKA" title="What is Ethereum? Everything you need to know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content1" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">How does Ethereum work?</p>
+                <p style="font-size: 20px; text-align: justify">
+                    You might have heard that the Bitcoin blockchain is a lot like a bank’s ledger, or even a checkbook. It’s a running tally of every transaction made on the network going back to the very beginning — and all the computers on the network contribute their computing power towards the work of ensuring that the tally is accurate and secure.<br/><br/>
+                    <b>The Ethereum blockchain,</b> on the other hand, is more like a computer: while it also does the work of documenting and securing transactions, it’s much more flexible than the Bitcoin blockchain. Developers can use the Ethereum blockchain to build a huge variety of tools — everything from logistics management software to games to the entire universe of DeFi applications (which span lending, borrowing, trading, and more).<br/><br/>
+                    Ethereum uses a <b>'virtual machine'</b> to achieve all this, which is like a giant, global computer made up of many individual computers running the Ethereum software. Keeping all of those computers running involves investment in both hardware and electricity by participants. To cover those costs, the network uses its own Bitcoin-like cryptocurrency called Ether (or, more commonly, ETH).<br/><br/>
+                    ETH keeps the whole thing running. You interact with the Ethereum network by using ETH to pay the network to execute smart contracts. As a result, the fees paid in ETH are called “gas.”<br/>
+                    Gas rates vary depending on how busy the network is. A new version of the Ethereum blockchain called <b>Ethereum 2.0,</b> which aims to increase efficiency, began rolling out in December 2020.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content2" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">Ethereum 2.0</p>
+                <p style="font-size: 20px; text-align: justify">
+                    <b>Ethereum 2.0</b> is a major upgrade to the Ethereum network. It’s designed to allow the Ethereum network to grow while increasing security, speed, and efficiency.<br/>
+                </p>
+                <ul style="font-size: 20px;">
+                    <li class="fw-bold">Why is Ethereum 2.0 necessary?</li>
+                    <p>Moving a popular cryptoasset to a new platform is a complex endeavor, but for Ethereum to scale and evolve, it needs to happen. That’s because the “Proof of Work” method used by the ETH 1.0 blockchain to verify transactions causes bottlenecks, increases fees, and consumes substantial resources (particularly electricity).</p>
+                    <li class="fw-bold">What is Proof of Work?</li>
+                    <p>How do cryptocurrency networks make sure that nobody spends the same money twice without a central authority like Visa or Paypal in the middle? They use a consensus mechanism. When ETH 1.0 launched, it adopted the consensus mechanism pioneered by Bitcoin: the aptly named Proof of Work.</p>
+                     Proof of Work requires a huge amount of processing power, which is contributed by virtual “miners” around the world who compete to be the first to solve a time-consuming math puzzle.<br/>
+                     The winner gets to update the blockchain with the latest verified transactions, and is rewarded with a predetermined amount of ETH.
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content3" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">Ethereum's limitations</p>
+                <p style="font-size: 20px; text-align: justify">
+                    The most significant limitation of Ethereum - like with Bitcoin - is its scalability, which, as with Bitcoin, is hard to achieve without sacrificing  decentralisation or security.<br/>
+                    Fiat currency achieves security and scalability but sacrifices decentralisation to do so. In contrast, Bitcoin achieves decentralisation and security but sacrifices scalability to do so. At the moment it’s a similar story with Ethereum, while its critics also point to its founder as a point of failure, along with a lack of clarity over its total supply.<br/><br/>
+                    Bitcoin can handle around 5 transactions per second, whereas Ethereum can handle about 30. Compare this with a platform like VISA that can run 50,000 per second, and we can see the current limitations of cryptocurrencies.<br/><br/>
+                    This limitation of Ethereum, coupled with its ability to empower developers to produce DApps, led to the rise of the ICO ecosystem. An ICO - initial coin offering - initially funded Ethereum; inspiring many developers to raise funds similarly.<br/>
+                    Many promised things that they couldn’t deliver on the current Ethereum platform. Thus, the resulting ICO frenzy where teams raised lots of money but often failed to deliver on their promises.
+                </p>
+                <form action="/learn/finished" method="post">
+                    <input type="text" name="course" value="What is Ethereum?" hidden>
+                    <button class="btn btn-outline-success col-12">Mark course as done</button>
+                </form>
+                <a th:href="@{'/learn/what-is-blockchain'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function getContent(){
+        document.getElementById("content").hidden = false;
+        document.getElementById("content1").hidden = false;
+        document.getElementById("content2").hidden = false;
+        document.getElementById("content3").hidden = false;
+
+    }
+</script>

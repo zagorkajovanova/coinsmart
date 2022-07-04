@@ -1,0 +1,103 @@
+<div class="container mt-5" xmlns="http://www.w3.org/1999/html">
+    <p class="display-5" style="font-weight: bold;">Bitcoin, scarcity & trust in money</p>
+
+    <div class="row" id="intro">
+        <div class="col-lg-7">
+            <img src="/img/bitcoin2.png" class="img-fluid">
+        </div>
+        <div class="col">
+            <div style="background-color: #f8f9fa; padding: 20px; position: sticky; top: 0;">
+                <p class="fw-bold">What you'll learn?</p>
+                <p>
+                    1. Why scarcity matters so much for sound money</br>
+                    2. How the existing money system works</br>
+                    3. Why achieving digital scarcity is such a big deal </br>
+                </p>
+                <button class="btn btn-outline-info" onclick="getContent()">Start learning</button>
+                <a th:href="@{'/learn/building-on-top-of-bitcoin'}" class="btn btn-outline-warning">Next course</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p style="font-size: 20px; text-align: justify">
+                    The absence of digital scarcity is the biggest weakness of existing money; achieving it was arguably the biggest challenge for cryptocurrency. Explaining both, is our challenge here, and it begins by talking about the importance of money holding value.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content1" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">The importance of money holding value</p>
+                <p style="font-size: 20px; text-align: justify">
+                    Money is a metre/yardstick for measuring value. This aspect of money is taken for granted by everyone who participates in the economy by using it as a medium of exchange. All trade and economic activity relies on it - it’s like a universal language. And just like when we speak our own language, we don’t often stop and consider it; we just take it for granted.<br/><br/>
+                    Can you imagine a world where a metre kept constantly changing? Science, engineering and almost all commerce would be impossible.<br/><br/>
+                    The same goes for economic activity in a world where the value of money doesn’t hold. Even just buying a coffee would require both a lot of maths and a huge amount of risk, let alone more complex stuff like mortgages or insurance.<br/><br/>
+                    Unlike the metre, however, which is a fixed, objective and universally agreed measurement that will never change, money’s value - its measurement - is subjective and therefore changes.<br/>
+                    That change is the result of money’s relative scarcity; the impact on money’s value of the increase in its supply is called inflation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content2" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">Achieving digital scarcity</p>
+                <p style="font-size: 20px; text-align: justify">
+                    A scarce commodity is something that has a limited supply; it isn’t easy to create, copy, or otherwise access.<br/>
+                    Physical stuff can be scarce (like we’ve seen with gold), but digital things are an entirely different matter. A byte is very easy and cheap to copy, as the music and film industries have painfully discovered in the early days of the internet.<br/><br/>
+                    That’s why digital money, such as cryptocurrency, isn’t a file you keep on your hard drive; that would be impractical as anyone with a computer would then be able to just infinitely copy it around.<br/><br/>
+                    Instead, all forms of digital currency - <b>both fiat and crypto</b> -  rely on an accounting system based on digital ledgers. A ledger being an organised record of debits and credits against account holders, providing a running balance.<br/><br/>
+                    You may be surprised to hear that <b>97%</b> of all fiat money only exists digitally. So all the money in your bank account, for example, are just entries on your bank’s accounting system. Even the 3% physical banknotes and coins are accounted for as entries on a central bank’s digital books.<br/>
+                    Bitcoin is also based on a digital ledger. The crucial difference between Bitcoin and Fiat is the way rules are created to govern if/when/how much new money is added to the system and how the ledger is maintained.<br/><br/>
+                    And it just so happens that these differences change everything.
+                </p>
+            </div>
+        </div>
+        <div class="col" style="background-color: #f8f9fa; padding: 20px; height: 150px; margin-top: 90px">
+            <div class="mt-3 fw-bold">
+                Fiat money is a type of currency that is not backed by any commodity such as gold or silver, and typically declared by a decree from the government to be legal tender.
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="content3" hidden>
+        <div class="col-lg-7">
+            <div class="mt-3">
+                <p class="display-6" style="font-weight: bold;">The problem of trust in digital money</p>
+                <p style="font-size: 20px; text-align: justify">
+                    Money can only be useful (and sound) if the ledgers can be trusted to be accurate and honest, and if its supply is kept under control. This means unreasonable amounts of money won’t suddenly be created or destroyed, with consequential impact on its spending power.<br/><br/>
+                    So how do fiat currencies solve this today? Simple: the government manages money the ledger for its currency either directly, by controlling physical money creation (minting) and managing and allowing the creation of credit/debit relationships between itself, banks and people.<br/><br/>
+                    To do this the central bank licences a few select institutions (like banks and building societies) to keep ledgers of their own. The sum of the credit of all the records from the ledgers of all the banks of a country (including the central bank) is the total supply of that currency.<br/><br/>
+                    This authority-based trust system is what holds the traditional money systems together. The reason we can use our money online is because we trust that banks won’t let people cheat and spend more money than they have.<br/><br/>
+                    Though the system in practice is far more complicated, the general principle relies on trust. We must trust that institutions will behave in everyone’s best interest, and by doing so we grant them the authority and control over the money system.
+
+                    Even if this centralised system works most of the time, it still has a few noticeable weaknesses. For example, while your money is legally yours, it’s never really under your custody.<br/><br/>
+                    Every time you pay for a €2 coffee with your card, you are effectively asking your bank to subtract €2 from your account, and for the vendor’s bank to add €2 to the shop’s account.<br/>
+                    A single central point of failure is more vulnerable to corruption, manipulation, or plain old external pressure. This leaves the door open to abuse, mismanagement, and economic exclusionHowever, sticking to our central theme, the most worrying side effect of fiat money - money based only on institutional trust - is how it undermines scarcity.
+                </p>
+                <form action="/learn/finished" method="post">
+                    <input type="text" name="course" value="Bitcoin, scarcity & trust in money" hidden>
+                    <button class="btn btn-outline-success col-12">Mark course as done</button>
+                </form>
+                <a th:href="@{'/learn/what-is-bitcoin'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function getContent(){
+        document.getElementById("content").hidden = false;
+        document.getElementById("content1").hidden = false;
+        document.getElementById("content2").hidden = false;
+        document.getElementById("content3").hidden = false;
+
+    }
+</script>

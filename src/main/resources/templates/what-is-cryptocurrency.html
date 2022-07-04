@@ -15,7 +15,7 @@
                     4. A simple explanation of how Cryptocurrency works</br>
                 </p>
                 <button class="btn btn-outline-info" onclick="getContent()">Start learning</button>
-                <button class="btn btn-outline-warning">Next course</button>
+                <a th:href="@{'/learn/what-is-blockchain'}" class="btn btn-outline-warning">Next course</a>
             </div>
         </div>
     </div>
@@ -77,7 +77,8 @@
 
                     Although Bitcoin has been around since 2009, cryptocurrencies and applications of blockchain technology are still emerging in financial terms, and more uses are expected in the future. Transactions including bonds, stocks, and other financial assets could eventually be traded using the technology.<br/>
                 </p>
-                <form>
+                <form action="/learn/finished" method="post">
+                    <input type="text" name="course" value="What is Cryptocurrency?" hidden>
                     <button class="btn btn-outline-success col-12">Mark course as done</button>
                 </form>
                 <a th:href="@{'/learn'}" class="btn btn-outline-secondary col-12 mt-3">Back</a>
@@ -105,9 +106,6 @@
         document.getElementById("content3").hidden = false;
         document.getElementById("btn1").hidden = false;
         document.getElementById("btn2").hidden = false;
-
-
-
     }
 </script>
 
