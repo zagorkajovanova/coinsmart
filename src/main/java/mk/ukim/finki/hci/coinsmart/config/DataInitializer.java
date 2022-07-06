@@ -28,7 +28,7 @@ public class DataInitializer {
     @PostConstruct
     public void init(){
         Course course1 = new Course("What is Cryptocurrency?");
-        Course course2 = new Course("What is Blockchain");
+        Course course2 = new Course("What is Blockchain?");
         Course course3 = new Course("What is Ethereum?");
         Course course4 = new Course("What is Bitcoin?");
         Course course5 = new Course("Bitcoin, scarcity & trust in money");
@@ -41,7 +41,7 @@ public class DataInitializer {
         this.courseRepository.save(course5);
         this.courseRepository.save(course6);
 
-        User user = userService.register("user", "user", "user", "Test User", Role.ROLE_USER).get();
+        User user = userService.register("user", "user@test.com", "user", "user", "User User", Role.ROLE_USER).get();
         this.userRepository.save(user);
 
     }

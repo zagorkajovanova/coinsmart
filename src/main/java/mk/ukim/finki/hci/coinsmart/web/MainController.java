@@ -1,15 +1,24 @@
 package mk.ukim.finki.hci.coinsmart.web;
 
+import mk.ukim.finki.hci.coinsmart.model.Course;
+import mk.ukim.finki.hci.coinsmart.model.User;
+import mk.ukim.finki.hci.coinsmart.service.CourseService;
+import mk.ukim.finki.hci.coinsmart.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping
 public class MainController {
+
+    private final UserService userService;
+    private final CourseService courseService;
+
+    public MainController(UserService userService, CourseService courseService) {
+        this.userService = userService;
+        this.courseService = courseService;
+    }
 
     @GetMapping({"/", "/home"})
     public String getHomePage(Model model){
@@ -74,8 +83,38 @@ public class MainController {
         return "master-template";
     }
 
-    @PostMapping("/learn/finished")
-    public String markCourse(@RequestParam String course){
+    @GetMapping("/learn/finished/{username}/{courseId}")
+    public String markCourse(@PathVariable String username,
+                             @PathVariable String courseId){
+
+        User user = this.userService.findByUsername(username);
+        Long id = Long.parseLong(courseId);
+        Course course = this.courseService.findById(id);
+
+        this.userService.addCompletedCourse(user, course);
         return "redirect:/learn/completed-course";
+    }
+
+    @GetMapping("/profile/user/{username}")
+    public String getProfilePage(@PathVariable String username, Model model){
+
+        User user = this.userService.findByUsername(username);
+
+        model.addAttribute("user", user);
+        model.addAttribute("bodyContent", "profile");
+        model.addAttribute("pageTitle", "CoinSmart - Profile");
+
+        return "master-template";
+    }
+
+    @PostMapping("/profile/edit/{id}")
+    public String editProfile(@PathVariable Long id,
+                              @RequestParam String fullName,
+                              @RequestParam String username,
+                              @RequestParam String email){
+
+        this.userService.update(id, username, fullName, email);
+
+        return "redirect:/profile/user/" + username;
     }
 }

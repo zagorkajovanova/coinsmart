@@ -23,6 +23,8 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private String fullName;
+    private String email;
+    private Boolean completedQuiz;
 
     @Enumerated(value = EnumType.STRING)
     private Role role;
@@ -33,11 +35,13 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String password, String fullName, Role role) {
+    public User(String username, String password, String fullName, String email, Role role) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.role = role;
+        this.email = email;
+        this.completedQuiz = false;
         this.completedCourses = new ArrayList<>();
     }
 

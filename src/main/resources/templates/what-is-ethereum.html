@@ -85,10 +85,9 @@
                     This limitation of Ethereum, coupled with its ability to empower developers to produce DApps, led to the rise of the ICO ecosystem. An ICO - initial coin offering - initially funded Ethereum; inspiring many developers to raise funds similarly.<br/>
                     Many promised things that they couldn’t deliver on the current Ethereum platform. Thus, the resulting ICO frenzy where teams raised lots of money but often failed to deliver on their promises.
                 </p>
-                <form action="/learn/finished" method="post">
-                    <input type="text" name="course" value="What is Ethereum?" hidden>
-                    <button class="btn btn-outline-success col-12">Mark course as done</button>
-                </form>
+
+                <a th:href="'/learn/finished/' + ${#request.getRemoteUser()} + '/3'" class="btn btn-outline-success col-12">Mark course as done</a>
+
                 <a th:href="@{'/learn/what-is-blockchain'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
             </div>
         </div>

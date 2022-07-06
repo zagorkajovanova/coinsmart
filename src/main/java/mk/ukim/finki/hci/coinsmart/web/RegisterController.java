@@ -40,11 +40,12 @@ public class RegisterController {
     public String register(@RequestParam String fullName,
                            @RequestParam String username,
                            @RequestParam String password,
-                           @RequestParam String repeatPassword){
+                           @RequestParam String repeatPassword,
+                           @RequestParam String email){
 
         Role role = Role.ROLE_USER;
 
-        this.userService.register(username,password,repeatPassword,fullName,role);
+        this.userService.register(username,password,repeatPassword,fullName, email, role);
         return "redirect:/login";
     }
 

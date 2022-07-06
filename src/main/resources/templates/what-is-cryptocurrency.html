@@ -77,10 +77,9 @@
 
                     Although Bitcoin has been around since 2009, cryptocurrencies and applications of blockchain technology are still emerging in financial terms, and more uses are expected in the future. Transactions including bonds, stocks, and other financial assets could eventually be traded using the technology.<br/>
                 </p>
-                <form action="/learn/finished" method="post">
-                    <input type="text" name="course" value="What is Cryptocurrency?" hidden>
-                    <button class="btn btn-outline-success col-12">Mark course as done</button>
-                </form>
+
+                <a th:href="'/learn/finished/' + ${#request.getRemoteUser()} + '/1'" class="btn btn-outline-success col-12">Mark course as done</a>
+
                 <a th:href="@{'/learn'}" class="btn btn-outline-secondary col-12 mt-3">Back</a>
             </div>
         </div>

@@ -81,10 +81,9 @@
                     Every time you pay for a €2 coffee with your card, you are effectively asking your bank to subtract €2 from your account, and for the vendor’s bank to add €2 to the shop’s account.<br/>
                     A single central point of failure is more vulnerable to corruption, manipulation, or plain old external pressure. This leaves the door open to abuse, mismanagement, and economic exclusionHowever, sticking to our central theme, the most worrying side effect of fiat money - money based only on institutional trust - is how it undermines scarcity.
                 </p>
-                <form action="/learn/finished" method="post">
-                    <input type="text" name="course" value="Bitcoin, scarcity & trust in money" hidden>
-                    <button class="btn btn-outline-success col-12">Mark course as done</button>
-                </form>
+
+                <a th:href="'/learn/finished/' + ${#request.getRemoteUser()} + '/5'" class="btn btn-outline-success col-12">Mark course as done</a>
+
                 <a th:href="@{'/learn/what-is-bitcoin'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
             </div>
         </div>

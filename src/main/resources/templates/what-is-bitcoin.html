@@ -90,10 +90,9 @@
                 <p style="font-size: 20px; text-align: justify">
                     Bitcoin is designed to focus on <b>decentralisation, and it’s incredibly secure</b>. This comes at the price of scalability. Currently, Bitcoin’s maximum speed hovers at around five transactions per second (a fraction of Visa’s purported 50,000+), making it impractical for use at scale.
                 </p>
-                <form action="/learn/finished" method="post">
-                    <input type="text" name="course" value="What is Bitcoin?" hidden>
-                    <button class="btn btn-outline-success col-12">Mark course as done</button>
-                </form>
+
+                <a th:href="'/learn/finished/' + ${#request.getRemoteUser()} + '/4'" class="btn btn-outline-success col-12">Mark course as done</a>
+
                 <a th:href="@{'/learn/what-is-ethereum'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
             </div>
         </div>

@@ -99,10 +99,9 @@
                     <li>The Bitcoin Cash and Litecoin blockchains work in a very similar way to the original Bitcoin blockchain. The Ethereum blockchain is a further evolution of the distributed ledger idea, because unlike the Bitcoin blockchain it’s not solely designed to manage a digital money. Think of the Ethereum blockchain more like a powerful and highly flexible computing platform that allows coders to easily build all kinds of applications leveraging the blockchain.</li>
                     <li><b>For example</b>, imagine a charity that wants to send money to a thousand people every day for a year. With Ethereum, that would only take a few lines of code. Or maybe you’re a video game developer that wants to create items like swords and armor that can be traded outside of the game itself? Ethereum is designed to do that, too.</li>
                 </ul>
-                <form action="/learn/finished" method="post">
-                    <input type="text" name="course" value="What is Blockchain?" hidden>
-                    <button class="btn btn-outline-success col-12">Mark course as done</button>
-                </form>
+
+                <a th:href="'/learn/finished/' + ${#request.getRemoteUser()} + '/2'" class="btn btn-outline-success col-12">Mark course as done</a>
+
                 <a th:href="@{'/learn/what-is-cryptocurrency'}" class="btn btn-outline-secondary col-12 mt-3">Previous course</a>
             </div>
         </div>
