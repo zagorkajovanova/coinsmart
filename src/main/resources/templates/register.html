@@ -1,0 +1,43 @@
+<div class="container text-center mt-5">
+    <h1 class="text-center">Join us!</h1>
+</div>
+
+<div class="container d-flex justify-content-center mt-3">
+    <form action="/register" method="POST">
+
+        <div class="row pl-3 mb-3">
+            <div th:text="${param.error}" class="text-danger"></div>
+        </div>
+
+        <div class="row">
+            <!-- Full name -->
+            <div class="input-group col-lg-6 mb-4">
+                <input id="fullName" type="text" name="fullName" placeholder="Full name" class="form-control bg-white border-left-0 border-md">
+            </div>
+
+            <!--Username-->
+            <div class="input-group col-lg-6 mb-4">
+                <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md">
+            </div>
+
+            <!-- Password -->
+            <div class="input-group col-lg-6 mb-4">
+                <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+            </div>
+
+            <!-- Repeat Password -->
+            <div class="input-group col-lg-6 mb-4">
+                <input id="repeatPassword" type="password" name="repeatPassword" placeholder="Repeat password" class="form-control bg-white border-left-0 border-md">
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" id="submit" class="btn btn-primary py-2">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="text-center w-100">
+    <p class="text-muted">Already have an account? <a th:href="@{'/login'}" class="text-primary ml-2 text-decoration-none">Login</a></p>
+</div>
