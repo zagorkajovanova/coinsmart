@@ -102,7 +102,7 @@ public class MainController {
 
         model.addAttribute("user", user);
         model.addAttribute("bodyContent", "profile");
-        model.addAttribute("pageTitle", "CoinSmart - Profile");
+        model.addAttribute("pageTitle", "Profile");
 
         return "master-template";
     }

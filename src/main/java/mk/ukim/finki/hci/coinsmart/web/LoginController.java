@@ -40,7 +40,7 @@ public class LoginController {
             user = this.userService.login(username, password);
         }catch (Exception ex) {
             model.addAttribute("error", ex.getMessage());
-            model.addAttribute("pageTitle", "CoinSmart - Login");
+            model.addAttribute("pageTitle", "Login");
             model.addAttribute("bodyContent", "login");
             return "master-template";
         }

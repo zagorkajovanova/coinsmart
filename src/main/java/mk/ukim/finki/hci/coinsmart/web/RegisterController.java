@@ -30,7 +30,7 @@ public class RegisterController {
             model.addAttribute("error", error);
         }
 
-        model.addAttribute("pageTitle", "CoinSmart - Register");
+        model.addAttribute("pageTitle", "Register");
         model.addAttribute("bodyContent", "register");
 
         return "master-template";
@@ -45,7 +45,7 @@ public class RegisterController {
 
         Role role = Role.ROLE_USER;
 
-        this.userService.register(username,password,repeatPassword,fullName, email, role);
+        this.userService.register(username, email, password, repeatPassword,fullName, role);
         return "redirect:/login";
     }
 

@@ -3,7 +3,7 @@
 </div>
 
 <div class="container d-flex justify-content-center mt-3">
-    <form action="/login" method="POST">
+    <form action="/login" method="POST" class="w-50">
 
         <div class="row pl-3 mb-3">
             <div th:text="${param.error}" class="text-danger"></div>
@@ -22,8 +22,8 @@
             </div>
 
             <!-- Submit Button -->
-            <div>
-                <button type="submit" id="submit" class="btn btn-primary py-2">Login</button>
+            <div class="text-end">
+                <button type="submit" id="submit" class="btn btn-outline-primary py-2 col-2">Login</button>
             </div>
         </div>
     </form>
