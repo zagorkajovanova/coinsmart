@@ -4,9 +4,14 @@ import mk.ukim.finki.hci.coinsmart.model.Course;
 import mk.ukim.finki.hci.coinsmart.model.User;
 import mk.ukim.finki.hci.coinsmart.service.CourseService;
 import mk.ukim.finki.hci.coinsmart.service.UserService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.net.http.HttpRequest;
+import java.util.List;
 
 @Controller
 @RequestMapping
@@ -24,6 +29,8 @@ public class MainController {
     public String getHomePage(Model model){
         model.addAttribute("bodyContent", "home");
         model.addAttribute("pageTitle", "Home");
+        model.addAttribute("style", "progress.css");
+
         return "master-template";
     }
 
@@ -99,10 +106,22 @@ public class MainController {
     public String getProfilePage(@PathVariable String username, Model model){
 
         User user = this.userService.findByUsername(username);
+        List<Course> completedCourses = user.getCompletedCourses();
+
+        float total = completedCourses.size();
+        float progress;
+
+        if(total > 6){
+            progress = 100;
+        }else{
+            progress = (total / 6)*100;
+        }
 
         model.addAttribute("user", user);
+        model.addAttribute("progress", Math.round(progress));
         model.addAttribute("bodyContent", "profile");
         model.addAttribute("pageTitle", "Profile");
+        model.addAttribute("style", "progress.css");
 
         return "master-template";
     }
