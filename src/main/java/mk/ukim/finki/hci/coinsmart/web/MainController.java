@@ -4,8 +4,6 @@ import mk.ukim.finki.hci.coinsmart.model.Course;
 import mk.ukim.finki.hci.coinsmart.model.User;
 import mk.ukim.finki.hci.coinsmart.service.CourseService;
 import mk.ukim.finki.hci.coinsmart.service.UserService;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -135,5 +133,29 @@ public class MainController {
         this.userService.update(id, username, fullName, email);
 
         return "redirect:/profile/user/" + username;
+    }
+
+    @GetMapping("/quiz")
+    public String getMainQuizPage(Model model){
+        model.addAttribute("pageTitle", "Quiz");
+        model.addAttribute("bodyContent", "quiz");
+        return "master-template";
+    }
+
+    @GetMapping("/questions")
+    public String getQuestionPage(Model model){
+        model.addAttribute("pageTitle", "Questions");
+        model.addAttribute("bodyContent", "questions");
+        return "master-template";
+    }
+
+    @GetMapping("/completed/{username}")
+    public String getQuizCompletedPage(Model model, @PathVariable String username){
+        User user = this.userService.findByUsername(username);
+        this.userService.markCompletedQuiz(user);
+
+        model.addAttribute("pageTitle", "Quiz completed");
+        model.addAttribute("bodyContent", "completed");
+        return "master-template";
     }
 }

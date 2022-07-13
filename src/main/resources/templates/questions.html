@@ -1,0 +1,120 @@
+<div class="container mt-2">
+    <div class="text-center" id="quiz-img">
+        <img src="/img/question2.jpg" class="w-25">
+    </div>
+
+    <div id="content2">
+        <div class="row justify-content-center mt-2 mb-2">
+            <div class="col col-lg-6">
+                <p class="fw-bold text-center" style="font-size: 30px" id="questionTitle"></p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3 mb-2">
+            <div class="col col-lg-5">
+                <button type="button" class="btn btn-lg btn-outline-primary btn-default w-100 response" id="ans1"></button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5 mb-2">
+            <div class="col col-lg-5">
+                <button type="button" class="btn btn-lg btn-outline-primary btn-default w-100 response" id="ans2"></button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5 mb-2">
+            <div class="col col-lg-5">
+                <button type="button" class="btn btn-lg btn-outline-primary btn-default w-100 response" id="ans3"></button>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3 mb-2">
+            <div class="col col-lg-2">
+                <a th:href="'/completed/' + ${#request.getRemoteUser()}" type="button" class="btn btn-lg btn-success btn-default w-100 response" id="finish" hidden>Finish</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Correct Modal -->
+    <div class="modal fade" id="correctModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Correct answer!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrong Modal -->
+    <div class="modal fade" id="wrongModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Incorrect answer!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Try again...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let baseUrl = window.location.href;
+    let apiUrl;
+
+    apiUrl = baseUrl.split("questions")[0] + "api/questions";
+
+    let questions;
+    let currentQuestion = 0;
+
+    $.ajax({
+        url: apiUrl,
+        contentType: "application/json",
+        dataType: 'json',
+        success: function(result){
+            questions = result;
+            nextQuestion();
+        }
+    });
+
+
+
+    function checkAnswer(response) {
+        if(questions[currentQuestion].correctAnswer.responseText.toLowerCase()===response.toLowerCase()) {
+            $('#correctModal').modal('toggle');
+            currentQuestion++;
+            if(currentQuestion === 5){
+                document.getElementById("finish").hidden = false;
+            }else{
+                nextQuestion();
+            }
+        } else {
+            $('#wrongModal').modal('toggle');
+        }
+    }
+
+    function nextQuestion() {
+        document.getElementById("questionTitle").innerHTML = questions[currentQuestion].question;
+        let arrResponses = document.getElementsByClassName("response");
+
+        for(let i=0; i<arrResponses.length; i++) {
+            let questionResponses = questions[currentQuestion].responses;
+
+            arrResponses[i].replaceWith(arrResponses[i].cloneNode(true));
+
+            arrResponses[i].addEventListener("click", function () {
+                checkAnswer(questionResponses[i].responseText);
+            });
+
+            arrResponses[i].innerHTML = questionResponses[i].responseText;
+        }
+    }
+</script>

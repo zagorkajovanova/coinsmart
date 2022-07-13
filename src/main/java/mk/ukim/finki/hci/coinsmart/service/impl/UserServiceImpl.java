@@ -65,6 +65,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User markCompletedQuiz(User user) {
+        user.setCompletedQuiz(true);
+        this.userRepository.save(user);
+        return user;
+    }
+
+    @Override
     public User findByUsername(String username) {
         return this.userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(username));
     }
