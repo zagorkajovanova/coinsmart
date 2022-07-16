@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,6 +68,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User markCompletedQuiz(User user) {
         user.setCompletedQuiz(true);
+        user.setDateCertificate(LocalDate.now());
         this.userRepository.save(user);
         return user;
     }

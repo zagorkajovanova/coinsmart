@@ -155,7 +155,17 @@ public class MainController {
         this.userService.markCompletedQuiz(user);
 
         model.addAttribute("pageTitle", "Quiz completed");
-        model.addAttribute("bodyContent", "completed");
+        model.addAttribute("bodyContent", "completed-quiz");
+        return "master-template";
+    }
+
+    @GetMapping("/certificate/{username}")
+    public String getCertificatePage(Model model, @PathVariable String username){
+        User user = this.userService.findByUsername(username);
+
+        model.addAttribute("user", user);
+        model.addAttribute("pageTitle", "Certificate");
+        model.addAttribute("bodyContent", "certificate");
         return "master-template";
     }
 }

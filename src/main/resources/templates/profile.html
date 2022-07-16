@@ -3,7 +3,7 @@
     <p class="display-6 fw-bold"><th:block th:text="${user.getFullName()}"></th:block></p>
 </div>
 
-<div class="container d-flex justify-content-center" onload="updateProgress()">
+<div class="container d-flex justify-content-center">
     <div class="main main-raised">
         <div class="profile-content">
             <div class="container">
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="form-group" th:if="${user.getCompletedQuiz().equals(true)}">
                                     <label for="certificate2">Certificate</label><br/>
-                                    <a id="certificate2" class="btn btn-outline-danger col-12">Your certificate</a>
+                                    <a th:href="'/certificate/' + ${#request.getRemoteUser()}" id="certificate2" class="btn btn-outline-danger col-12">Your certificate</a>
                                 </div>
                             </div>
                         </div>

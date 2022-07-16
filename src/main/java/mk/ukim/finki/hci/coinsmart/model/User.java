@@ -6,6 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -25,6 +26,7 @@ public class User implements UserDetails {
     private String fullName;
     private String email;
     private Boolean completedQuiz;
+    private LocalDate dateCertificate;
 
     @Enumerated(value = EnumType.STRING)
     private Role role;

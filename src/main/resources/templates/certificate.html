@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="container" style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid dodgerblue">
+        <div class="container" style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
+            <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+            <br><br>
+            <span style="font-size:25px"><i>This is to certify that</i></span>
+            <br><br>
+            <span style="font-size:30px; text-decoration: underline"><b><th:block th:text="${user.fullName}"></th:block></b></span><br/><br/>
+            <span style="font-size:25px"><i>has completed the Cryptocurrency and Blockchain Course</i></span> <br/>
+            <span style="font-size:25px">by <span class="text-primary fw-bold">coinsmart</span></span><br/><br/>
+
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div th:text="${user.dateCertificate}"></div><hr/>
+                    <div>Date</div>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-end">
+                    <img src="/img/signature1.png" width="250px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" container text-center mt-3">
+    <a th:href="@{'/home'}" class="btn btn-success col-lg-1">Home</a>
+    <button class="btn btn-warning col-lg-1" onclick="printCertificate()">Print</button>
+</div>
+
+<div class="container mt-2">
+    <p class="text-muted text-center">You can access your certificate anytime on your profile</p>
+</div>
+
+
+<!-- Printing Modal -->
+<div class="modal fade" id="printingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Print</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Certificate sent to printer for printing.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function printCertificate(){
+        $('#printingModal').modal('toggle');
+    }
+</script>
