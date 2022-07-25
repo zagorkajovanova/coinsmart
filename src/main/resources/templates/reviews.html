@@ -1,0 +1,50 @@
+<div class="container text-center mt-5">
+    <p class="display-5 fw-bold">Your word matters!</p>
+    <p class="text-muted">We are open to hearing your recommendations for our improvement</p>
+</div>
+
+<div class="container mb-4 mt-4 w-50" th:each="post : ${posts}" style="border: 1px solid grey; padding: 10px; border-radius: 5px">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <section class="post-heading">
+                    <div class="row" >
+                        <div class="col-md-1">
+                            <div class="media">
+                                <div>
+                                    <img class="media-object photo-profile" src="/img/user.jpg" width="40" height="40" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h4 class="media-heading fw-bold"><th:block th:text="${post.user.fullName}"></th:block></h4>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="heart"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="post-body">
+                    <p><th:block th:text="${post.content}"></th:block></p>
+                </section>
+                <div>
+                    <p class="anchor-time text-end"><th:block th:text="${post.date}"></th:block></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <a class="btn btn-primary col-lg-6">Add Review</a>
+</div>
+
+<script>
+    $(".heart").on('click touchstart', function(){
+        $(this).toggleClass('is_animating');
+    });
+
+    /*when the animation is over, remove the class*/
+    $(".heart").on('animationend', function(){
+        $(this).toggleClass('is_animating');
+    });
+</script>

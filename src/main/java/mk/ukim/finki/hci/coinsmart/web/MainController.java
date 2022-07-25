@@ -1,14 +1,15 @@
 package mk.ukim.finki.hci.coinsmart.web;
 
 import mk.ukim.finki.hci.coinsmart.model.Course;
+import mk.ukim.finki.hci.coinsmart.model.Post;
 import mk.ukim.finki.hci.coinsmart.model.User;
 import mk.ukim.finki.hci.coinsmart.service.CourseService;
+import mk.ukim.finki.hci.coinsmart.service.PostService;
 import mk.ukim.finki.hci.coinsmart.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpRequest;
 import java.util.List;
 
 @Controller
@@ -17,10 +18,12 @@ public class MainController {
 
     private final UserService userService;
     private final CourseService courseService;
+    private final PostService postService;
 
-    public MainController(UserService userService, CourseService courseService) {
+    public MainController(UserService userService, CourseService courseService, PostService postService) {
         this.userService = userService;
         this.courseService = courseService;
+        this.postService = postService;
     }
 
     @GetMapping({"/", "/home"})
@@ -166,6 +169,17 @@ public class MainController {
         model.addAttribute("user", user);
         model.addAttribute("pageTitle", "Certificate");
         model.addAttribute("bodyContent", "certificate");
+        return "master-template";
+    }
+
+    @GetMapping("/reviews")
+    public String getForumPage(Model model){
+        List<Post> posts = this.postService.findAll();
+
+        model.addAttribute("posts", posts);
+        model.addAttribute("style", "forum.css");
+        model.addAttribute("pageTitle", "Forum");
+        model.addAttribute("bodyContent", "reviews");
         return "master-template";
     }
 }

@@ -1,6 +1,7 @@
 package mk.ukim.finki.hci.coinsmart.service;
 
 import mk.ukim.finki.hci.coinsmart.model.Course;
+import mk.ukim.finki.hci.coinsmart.model.Post;
 import mk.ukim.finki.hci.coinsmart.model.User;
 import mk.ukim.finki.hci.coinsmart.model.enums.Role;
 import org.springframework.security.core.userdetails.UserDetails;

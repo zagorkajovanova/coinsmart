@@ -1,12 +1,14 @@
 package mk.ukim.finki.hci.coinsmart.service.impl;
 
 import mk.ukim.finki.hci.coinsmart.model.Course;
+import mk.ukim.finki.hci.coinsmart.model.Post;
 import mk.ukim.finki.hci.coinsmart.model.User;
 import mk.ukim.finki.hci.coinsmart.model.enums.Role;
 import mk.ukim.finki.hci.coinsmart.model.exceptions.InvalidUserException;
 import mk.ukim.finki.hci.coinsmart.model.exceptions.InvalidUsernameOrPasswordException;
 import mk.ukim.finki.hci.coinsmart.model.exceptions.PasswordsDoNotMatchException;
 import mk.ukim.finki.hci.coinsmart.model.exceptions.UsernameAlreadyExistsException;
+import mk.ukim.finki.hci.coinsmart.repository.PostRepository;
 import mk.ukim.finki.hci.coinsmart.repository.UserRepository;
 import mk.ukim.finki.hci.coinsmart.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,10 +25,12 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final PostRepository postRepository;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.postRepository = postRepository;
     }
 
     @Override

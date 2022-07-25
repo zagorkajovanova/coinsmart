@@ -7,7 +7,6 @@
     <p class="text-center" style="font-weight: bold; letter-spacing: 2px; font-size: 45px">CERTIFICATE</p>
 
     <div class="text-center">
-        <a th:href="@{'/home'}" class="btn btn-warning col-lg-2">Home</a>
         <a th:href="'/certificate/' + ${#request.getRemoteUser()}" class="btn btn-success col-lg-2">View certificate</a>
     </div>
     <div class="mt-2">

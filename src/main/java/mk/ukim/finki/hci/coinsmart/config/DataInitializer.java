@@ -1,15 +1,9 @@
 package mk.ukim.finki.hci.coinsmart.config;
 
 import lombok.Getter;
-import mk.ukim.finki.hci.coinsmart.model.Course;
-import mk.ukim.finki.hci.coinsmart.model.Question;
-import mk.ukim.finki.hci.coinsmart.model.Response;
-import mk.ukim.finki.hci.coinsmart.model.User;
+import mk.ukim.finki.hci.coinsmart.model.*;
 import mk.ukim.finki.hci.coinsmart.model.enums.Role;
-import mk.ukim.finki.hci.coinsmart.repository.CourseRepository;
-import mk.ukim.finki.hci.coinsmart.repository.QuestionRepository;
-import mk.ukim.finki.hci.coinsmart.repository.ResponseRepository;
-import mk.ukim.finki.hci.coinsmart.repository.UserRepository;
+import mk.ukim.finki.hci.coinsmart.repository.*;
 import mk.ukim.finki.hci.coinsmart.service.UserService;
 import org.springframework.stereotype.Component;
 
@@ -27,13 +21,15 @@ public class DataInitializer {
     private final UserService userService;
     private final ResponseRepository responseRepository;
     private final QuestionRepository questionRepository;
+    private final PostRepository postRepository;
 
-    public DataInitializer(UserRepository userRepository, CourseRepository courseRepository, UserService userService, ResponseRepository responseRepository, QuestionRepository questionRepository) {
+    public DataInitializer(UserRepository userRepository, CourseRepository courseRepository, UserService userService, ResponseRepository responseRepository, QuestionRepository questionRepository, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.courseRepository = courseRepository;
         this.userService = userService;
         this.responseRepository = responseRepository;
         this.questionRepository = questionRepository;
+        this.postRepository = postRepository;
     }
 
     @PostConstruct
@@ -53,6 +49,10 @@ public class DataInitializer {
         this.courseRepository.save(course6);
 
         User user = userService.register("user", "user@test.com", "user", "user", "User User", Role.ROLE_USER).get();
+        User user1 = userService.register("jd", "john@test.com", "jd", "jd", "John Doe", Role.ROLE_USER).get();
+        User user2 = userService.register("zj", "zagorka@test.com", "zj", "zj", "Zagorka Jovanova", Role.ROLE_USER).get();
+        this.userRepository.save(user1);
+        this.userRepository.save(user2);
         this.userRepository.save(user);
 
         Response response1 = new Response("Encrypted currency of a certain state");
@@ -105,6 +105,12 @@ public class DataInitializer {
         Question question5 = new Question("Select the pseudonym of the founder of the Bitcoin payment system.", responseList, response14);
         this.questionRepository.save(question5);
 
+        Post post1 = new Post("This course as a whole has taught me a lot about cryptocurrency and blockchain and also helped me for my academic researches. I want to know, are there more courses planned?", user);
+        Post post2 = new Post("I find this course prepared very well. There are many perspectives and this course does not concentrate on the technology only. I find this course very helpful. The level is more then just beginner.", user1);
+        Post post3 = new Post("Great course to get introduced into Bitcoin and Blockchain technologies at technical level. In general is mainly focused on Bitcoin but shows some of the details behind the implementation to get a strong knowledge.", user2);
+        this.postRepository.save(post2);
+        this.postRepository.save(post3);
+        this.postRepository.save(post1);
 
     }
 }
