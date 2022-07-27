@@ -1,3 +1,4 @@
+<div class="container" xmlns:sec="http://www.w3.org/1999/xhtml">
 <div class="container text-center mt-5">
     <p class="display-5 fw-bold">Your word matters!</p>
     <p class="text-muted">We are open to hearing your recommendations for our improvement</p>
@@ -34,8 +35,9 @@
         </div>
     </div>
 </div>
-<div class="container text-center">
-    <a class="btn btn-primary col-lg-6">Add Review</a>
+<div class="container text-center" sec:authorize="isAuthenticated()">
+    <a th:href="${'/reviews/add-review'}" class="btn btn-primary col-lg-6">Add Review</a>
+</div>
 </div>
 
 <script>

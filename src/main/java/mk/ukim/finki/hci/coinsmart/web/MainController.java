@@ -173,7 +173,7 @@ public class MainController {
     }
 
     @GetMapping("/reviews")
-    public String getForumPage(Model model){
+    public String getReviewsPage(Model model){
         List<Post> posts = this.postService.findAll();
 
         model.addAttribute("posts", posts);
@@ -181,5 +181,21 @@ public class MainController {
         model.addAttribute("pageTitle", "Forum");
         model.addAttribute("bodyContent", "reviews");
         return "master-template";
+    }
+
+    @GetMapping("/reviews/add-review")
+    public String getAddReviewPage(Model model){
+        model.addAttribute("pageTitle", "Add review");
+        model.addAttribute("bodyContent", "add-review");
+        return "master-template";
+    }
+
+    @PostMapping("/reviews/add-review/{username}")
+    public String addReview(Model model,
+                            @PathVariable String username,
+                            @RequestParam String review){
+        User user = this.userService.findByUsername(username);
+        this.postService.addNewPost(user, review);
+        return "redirect:/reviews";
     }
 }
