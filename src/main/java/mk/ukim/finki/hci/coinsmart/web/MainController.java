@@ -177,8 +177,7 @@ public class MainController {
         List<Post> posts = this.postService.findAll();
 
         model.addAttribute("posts", posts);
-        model.addAttribute("style", "forum.css");
-        model.addAttribute("pageTitle", "Forum");
+        model.addAttribute("pageTitle", "Reviews");
         model.addAttribute("bodyContent", "reviews");
         return "master-template";
     }
